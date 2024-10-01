@@ -39,7 +39,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _Aphla_scale: 1
-    - _Depth: 0.142
+    - _Depth: 0.261
+    - _FadeTime: 2
     m_Colors:
     - _EmissionColor: {r: 2, g: 0.3307401, b: 0, a: 1}
   m_BuildTextureStacks: []

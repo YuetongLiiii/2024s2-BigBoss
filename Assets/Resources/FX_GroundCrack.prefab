@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8468245103584206321}
   - component: {fileID: 6802941337662397153}
   - component: {fileID: 4353472005645671824}
+  - component: {fileID: 5031338082485619935}
   m_Layer: 0
   m_Name: FX_GroundCrack
   m_TagString: Untagged
@@ -83,3 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!111 &5031338082485619935
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354589011289615157}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: cba449afe1e92b24bb7554e12d0d8984, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

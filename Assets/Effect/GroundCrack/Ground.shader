@@ -7,6 +7,8 @@ Shader "Unlit/Ground"
 	    _MaskTex("Mask", 2D) = "white" {}
 	    _Depth("depth", Range( 0 , 0.5)) = 0
 	    _Aphla_scale("aphla_scale", Range( 0 , 1)) = 1
+	    _Progress("Progress", Range( 0 , 1)) = 0.1
+	    _FadeTime("fade time", Range( 0 , 5)) = 1
 	    [HDR]_EmissionColor("Emission Color", Color) = (1,1,0,1)
     }
     SubShader
@@ -47,6 +49,8 @@ Shader "Unlit/Ground"
             sampler2D _EmissionTex;
             float4 _DepthTex_ST;
             float _Aphla_scale;
+            float _FadeTime;
+            float _Progress;
             float _Depth;
             fixed4 _EmissionColor;
             float2 POM( sampler2D heightMap, float2 uvs, float2 dx, float2 dy, float3 normalWorld, float3 viewWorld, float3 viewDirTan, int minSamples, int maxSamples, float parallax, float refPlane, float2 tilling, float2 curv, int index )
@@ -140,14 +144,29 @@ Shader "Unlit/Ground"
 				float3 tanToWorld0 = float3( ase_worldTangent.x, ase_worldBitangent.x, ase_worldNormal.x );
 				float3 tanToWorld1 = float3( ase_worldTangent.y, ase_worldBitangent.y, ase_worldNormal.y );
 				float3 tanToWorld2 = float3( ase_worldTangent.z, ase_worldBitangent.z, ase_worldNormal.z );
-				float3 ase_worldViewDir = UnityWorldSpaceViewDir(i.worldPos.xyz);
-				ase_worldViewDir = normalize(ase_worldViewDir);
-				float3 ase_tanViewDir =  tanToWorld0 * ase_worldViewDir.x + tanToWorld1 * ase_worldViewDir.y  + tanToWorld2 * ase_worldViewDir.z;
-				ase_tanViewDir = normalize(ase_tanViewDir);
-            	float2 depth_uv = POM( _DepthTex, uv_DepthTex, ddx(uv_DepthTex), ddy(uv_DepthTex), ase_worldNormal, ase_worldViewDir, ase_tanViewDir, 128, 128, _Depth, 0.5, _DepthTex_ST.xy, float2(0,0), 0 );
+				float3 worldViewDir = UnityWorldSpaceViewDir(i.worldPos.xyz);
+				worldViewDir = normalize(worldViewDir);
+				float3 tanViewDir =  tanToWorld0 * worldViewDir.x + tanToWorld1 * worldViewDir.y  + tanToWorld2 * worldViewDir.z;
+				tanViewDir = normalize(tanViewDir);
+            	float2 depth_uv = POM( _DepthTex, uv_DepthTex, ddx(uv_DepthTex), ddy(uv_DepthTex), ase_worldNormal, worldViewDir, tanViewDir, 128, 128, _Depth, 0.5, _DepthTex_ST.xy, float2(0,0), 0 );
                 fixed4 col = tex2D(_EmissionTex, depth_uv);
             	col*=_EmissionColor;
-				float4 rs = (float4(col.rgb , ( tex2D( _MaskTex, depth_uv ).a * _Aphla_scale )));
+            	float2 uv=i.uv;
+            	uv-=0.5;
+            	uv=abs(uv);
+            	float l=length(uv);
+            	float time=_Progress/_FadeTime;
+            	float left=0.2+time;
+            	float right=time;
+            	// if(_Time.y>1)
+            	// {
+            	// 	l=1-l;
+            	// 	left=time;
+            	// 	right=0.2+time;
+            	// }
+            	float a=smoothstep(left,right,l);
+            	
+				float4 rs = (float4(col.rgb , ( tex2D( _MaskTex, depth_uv ).a * _Aphla_scale*a )));
 
             	
                 return rs;
