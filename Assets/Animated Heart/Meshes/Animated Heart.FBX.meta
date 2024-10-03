@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: 5e148c25d2df6f847842f8ff135b69c0
+timeCreated: 1467382484
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bone001
+    100002: Bone002
+    100004: Bone003
+    100006: Bone004
+    100008: Bone005
+    100010: Bone006
+    100012: Bone007
+    100014: Bone008
+    100016: Bone009
+    100018: Bone011
+    100020: Heart_Anatomy_Group_Heart
+    100022: Heart_Anatomy_Group_Heart_Part
+    100024: Heart_Anatomy_Group_Ventricle
+    100026: //RootNode
+    100028: v1_A
+    100030: v1_B
+    100032: v1_C
+    100034: v2_A
+    100036: v2_B
+    100038: v2_C
+    100040: v3_A
+    100042: v3_B
+    100044: v3_C
+    100046: v4_A
+    100048: v4_B2
+    400000: Bone001
+    400002: Bone002
+    400004: Bone003
+    400006: Bone004
+    400008: Bone005
+    400010: Bone006
+    400012: Bone007
+    400014: Bone008
+    400016: Bone009
+    400018: Bone011
+    400020: Heart_Anatomy_Group_Heart
+    400022: Heart_Anatomy_Group_Heart_Part
+    400024: Heart_Anatomy_Group_Ventricle
+    400026: //RootNode
+    400028: v1_A
+    400030: v1_B
+    400032: v1_C
+    400034: v2_A
+    400036: v2_B
+    400038: v2_C
+    400040: v3_A
+    400042: v3_B
+    400044: v3_C
+    400046: v4_A
+    400048: v4_B2
+    2300000: v1_A
+    2300002: v1_B
+    2300004: v1_C
+    2300006: v2_A
+    2300008: v2_B
+    2300010: v2_C
+    2300012: v3_A
+    2300014: v3_B
+    2300016: v3_C
+    2300018: v4_A
+    2300020: v4_B2
+    3300000: v1_A
+    3300002: v1_B
+    3300004: v1_C
+    3300006: v2_A
+    3300008: v2_B
+    3300010: v2_C
+    3300012: v3_A
+    3300014: v3_B
+    3300016: v3_C
+    3300018: v4_A
+    3300020: v4_B2
+    4300000: v3_A
+    4300002: v3_B
+    4300004: v3_C
+    4300006: Heart_Anatomy_Group_Heart_Part
+    4300008: Heart_Anatomy_Group_Ventricle
+    4300010: Heart_Anatomy_Group_Heart
+    4300012: v1_A
+    4300014: v1_B
+    4300016: v1_C
+    4300018: v2_A
+    4300020: v2_B
+    4300022: v2_C
+    4300024: v4_A
+    4300026: v4_B2
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Heart_Anatomy_Group_Heart
+    13700002: Heart_Anatomy_Group_Heart_Part
+    13700004: Heart_Anatomy_Group_Ventricle
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 340
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone002
+        weight: 1
+      - path: Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Bone001/Bone002/Bone009
+        weight: 1
+      - path: Bone001/Bone002/Bone011
+        weight: 1
+      - path: Bone005
+        weight: 1
+      - path: Bone005/Bone006
+        weight: 1
+      - path: Bone005/Bone006/Bone007
+        weight: 1
+      - path: Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Heart_Anatomy_Group_Heart
+        weight: 1
+      - path: Heart_Anatomy_Group_Heart_Part
+        weight: 1
+      - path: Heart_Anatomy_Group_Ventricle
+        weight: 1
+      - path: v1_A
+        weight: 1
+      - path: v1_B
+        weight: 1
+      - path: v1_C
+        weight: 1
+      - path: v2_A
+        weight: 1
+      - path: v2_B
+        weight: 1
+      - path: v2_C
+        weight: 1
+      - path: v3_A
+        weight: 1
+      - path: v3_B
+        weight: 1
+      - path: v3_C
+        weight: 1
+      - path: v4_A
+        weight: 1
+      - path: v4_B2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
