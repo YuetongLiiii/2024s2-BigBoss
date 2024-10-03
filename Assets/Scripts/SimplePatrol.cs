@@ -22,20 +22,33 @@ public class SimplePatrol : MonoBehaviour
     void CreateFX_GC_L()
     {
         Transform leftFoot = animator.GetBoneTransform(HumanBodyBones.LeftFoot);
-        Vector3 offset = new Vector3(0, 0.1f, 0);
-        GameObject fx = Instantiate(Resources.Load<GameObject>("FX_GroundCrack"), leftFoot.position+offset, Quaternion.identity);
-        fx.transform.localRotation=Quaternion.Euler(90,0,0);
-        GameObject.Destroy(fx, 2.0f);
-        Debug.Log("CreateFX_GC_L");
+        Vector3 offset = new Vector3(0, 0.5f, 0);
+        Vector3 orgin = leftFoot.position + offset;
+        if(Physics.Raycast(orgin, Vector3.down, out RaycastHit hit, Mathf.Infinity, groundLayer))
+        {
+            Vector3 fxPos = hit.point;
+            fxPos += Vector3.up * 0.5f;
+            GameObject fx = Instantiate(Resources.Load<GameObject>("FX_GroundCrack"), fxPos, Quaternion.identity);
+            fx.transform.localRotation=Quaternion.Euler(90,0,0);
+            GameObject.Destroy(fx, 2.0f);
+            Debug.Log("CreateFX_GC_L");
+        }
     }
     void CreateFX_GC_R()
     {
         Transform rightFoot = animator.GetBoneTransform(HumanBodyBones.RightFoot);
         Vector3 offset = new Vector3(0, 0.1f, 0);
-        GameObject fx = Instantiate(Resources.Load<GameObject>("FX_GroundCrack"), rightFoot.position+offset, Quaternion.identity);
-        fx.transform.localRotation=Quaternion.Euler(90,0,0);
-        GameObject.Destroy(fx, 2.0f);
-        Debug.Log("CreateFX_GC_R");
+        Vector3 orgin = rightFoot.position + offset;
+        if(Physics.Raycast(orgin, Vector3.down, out RaycastHit hit, Mathf.Infinity, groundLayer))
+        {
+            Vector3 fxPos = hit.point;
+            fxPos += Vector3.up * 0.5f;
+            GameObject fx = Instantiate(Resources.Load<GameObject>("FX_GroundCrack"), fxPos, Quaternion.identity);
+            fx.transform.localRotation=Quaternion.Euler(90,0,0);
+            GameObject.Destroy(fx, 2.0f);
+            Debug.Log("CreateFX_GC_R");
+        }
+        
     }
     void Update()
     {
